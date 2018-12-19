@@ -28,12 +28,5 @@
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-plugin-plugin</artifactId>
       <version>3.3</version>
-      <executions>
-        <execution>
-        <id>default-descriptor</id>
-        <phase>intialize</phase>
-        </execution>
-        </executions>
-    </dependency>
-  </dependencies>
+    </dependencies>
 </project>
