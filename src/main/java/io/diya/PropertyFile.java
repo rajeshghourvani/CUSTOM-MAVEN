@@ -30,16 +30,16 @@ public class PropertyFile extends AbstractMojo {
                 throw new MojoExecutionException( "File don't exit: " + dir);
             }
 
-            File file = new File(this.propDir.getPath() + "/connection.properties");
+          //  File file = new File(this.propDir.getPath() + "/connection.properties");
 
-            Scanner scan1 = new Scanner(file);
-            Scanner scan2 = new Scanner(file);
+            Scanner scan1 = new Scanner(propDir);
+            Scanner scan2 = new Scanner(propDir);
             scan1.nextLine();
             scan1.nextLine();
 
             //starts iterating through URL connections
             while (scan1.hasNextLine()) {
-                scan2 = new Scanner(file);
+                scan2 = new Scanner(propDir);
                 String line = scan1.nextLine();
                 if (line.substring(0, 1).equals("w")) {
                     //Stops from reading the entire property file, ends at last URL connection
@@ -65,7 +65,7 @@ public class PropertyFile extends AbstractMojo {
 
                     if (count < 2) {
                         //appending the file
-                        fileWriter = new FileWriter(file, true);
+                        fileWriter = new FileWriter(propDir, true);
                         bufferedWriter = new BufferedWriter(fileWriter);
                         PrintWriter pw = new PrintWriter(bufferedWriter);
                         pw.println("urlConnection." + array[1] + ".authenticationType=none");
