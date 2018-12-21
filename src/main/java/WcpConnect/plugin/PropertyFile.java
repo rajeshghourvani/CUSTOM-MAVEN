@@ -1,4 +1,4 @@
-package io.diya;
+package WcpConnect.plugin;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
